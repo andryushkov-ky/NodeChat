@@ -30,6 +30,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
+        socket.broadcast.emit('newMessage', generateMessage('Admin', 'User was disconnected'));
         console.log('User was disconnected');
     })
 });
