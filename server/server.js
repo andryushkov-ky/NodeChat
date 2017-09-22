@@ -33,8 +33,8 @@ io.on('connection', (socket) => {
         // socket.broadcast.emit -> socket.broadcast.to('The Office Fans').emit
         // socket.emit
         io.to(params.room).emit('updateUserList', users.getUserList(params.room));
-        socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
-        socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', `${params.name} has joined.`));
+        socket.emit('newMessage', generateMessage('Frodo', 'Welcome to the Mordor'));
+        socket.broadcast.to(params.room).emit('newMessage', generateMessage('Frodo', `${params.name} has joined the battle.`));
         callback();
     });
 
@@ -61,7 +61,7 @@ io.on('connection', (socket) => {
 
         if (user) {
             io.to(user.room).emit('updateUserList', users.getUserList(user.room));
-            io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has left.`));
+            io.to(user.room).emit('newMessage', generateMessage('Frodo', `${user.name} has left the battle.`));
         }
     })
 });
