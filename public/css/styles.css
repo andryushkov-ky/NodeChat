@@ -182,6 +182,7 @@ button:disabled {
 	}
 
 	.chat__footer {
+		height: auto;
 		flex-direction: column;
 	}
 
