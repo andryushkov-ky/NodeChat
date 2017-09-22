@@ -7,8 +7,8 @@
 	font-size: .95rem;
 }
 
-ul, li {
-	list-style-position: inside;
+ol, ul, li {
+	list-style-position: unset;
 }
 
 h3 {
